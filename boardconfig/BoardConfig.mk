@@ -387,6 +387,16 @@ else ifeq ($(TARGET_DEVICE), hlte)
     BRIGHTNESS_SYS_FILE := "/sys/class/leds/lcd-backlight/brightness"
     BOARD_USE_B_SLOT_PROTOCOL := true
 
+#Galaxy Note 3 Exynos - N900x (ha3g): ha3gxx
+else ifeq ($(TARGET_DEVICE), ha3g)
+    TARGET_COMMON_NAME := Note 3 ($(TARGET_DEVICE))
+    BOOTLOADER_CMD_ARG := "download"
+    KERNEL_EXFAT_MODULE_NAME := "exfat"
+    TARGET_SCREEN_HEIGHT := 1920
+    TARGET_SCREEN_WIDTH := 1080
+    BRIGHTNESS_SYS_FILE := "/sys/class/backlight/panel/brightness"
+    BOARD_USE_B_SLOT_PROTOCOL := true
+
 #Galaxy Note 8.0 GSM (n5100), Wifi (n5110) and LTE (n5120)
 else ifneq ($(filter $(TARGET_DEVICE),n5100 n5110 n5120),)
     TARGET_COMMON_NAME := Galaxy Note 8.0
